@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'custom_user.apps.CustomUserConfig',
     "verify_email.apps.VerifyEmailConfig",
     "product",
+    "cart",
 ]
 
 MIDDLEWARE = [

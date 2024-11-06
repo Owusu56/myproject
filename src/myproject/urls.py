@@ -34,5 +34,6 @@ urlpatterns = [
     path('verification/', include('verify_email.urls')),
     path("", include("authentication.urls")),
     path("", include("django.contrib.auth.urls")),
-    path("", include("product.urls"))
+    path("", include("product.urls")),
+    path("", include("cart.urls")),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

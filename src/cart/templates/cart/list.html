@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block title %}
+     Cart
+{% endblock %}
+
+{% block content %}
+
+<div class="small-container cart-page">
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+        </tr>
+        <tr>
+        <td>
+            <div class="cart-info">
+                <img src="Images/pic3.jpg" width="30%">
+                <div>
+                    <p>Philips smart LED TV</p>
+                    <Small>Price:$2,150.00</Small>
+                    <br>
+                    <a href="">Remove</a>
+                </div>
+            </div>
+        </td>
+        <td><input type="number" value="1"></td>
+        <td>$2,150.00</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="Images/pic2.jpg" width="30%">
+                    <div>
+                        <p>Samsung smart android TV</p>
+                        <Small>Price:$1,150.00</Small>
+                        <br>
+                        <a href="">Remove</a>
+                    </div>
+                </div>
+            </td>
+            <td><input type="number" value="1"></td>
+            <td>$1,150.00</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="Images/pic1.jpg" width="30%">
+                        <div>
+                            <p>LG Smart OLED TV</p>
+                            <Small>Price:$3,150.00</Small>
+                            <br>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1"></td>
+                <td>$3,150.00</td>
+                </tr>
+    </table>
+
+    <div class="total-price">
+        <table>
+            <tr>
+                <td>Subtotal</td>
+                <td>$2000.00</td>
+            </tr>
+            <tr>
+                <td>Tax</td>
+                <td>$230.00</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>$2230.00</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
