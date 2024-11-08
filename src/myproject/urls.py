@@ -24,7 +24,7 @@ from authentication.views import index
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
     # path('', views.home),
     # path('about/', views.about),
     # path('authentication', include('authentication.urls')),

@@ -15,51 +15,27 @@
             <th>Quantity</th>
             <th>Subtotal</th>
         </tr>
-        <tr>
+       {% for cart in cart %}
+
+       <tr>
         <td>
             <div class="cart-info">
-                <img src="Images/pic3.jpg" width="30%">
+                <img src="{{ cart.product.image.url }}" width="30%">
                 <div>
-                    <p>Philips smart LED TV</p>
-                    <Small>Price:$2,150.00</Small>
+                    <p>{{ cart.product.name }}</p>
+                    <Small>Price:${{ cart.product.price }}</Small>
                     <br>
                     <a href="">Remove</a>
                 </div>
             </div>
         </td>
         <td><input type="number" value="1"></td>
-        <td>$2,150.00</td>
+        <td>${{ cart.Total_cost }}</td>
         </tr>
-        <tr>
-            <td>
-                <div class="cart-info">
-                    <img src="Images/pic2.jpg" width="30%">
-                    <div>
-                        <p>Samsung smart android TV</p>
-                        <Small>Price:$1,150.00</Small>
-                        <br>
-                        <a href="">Remove</a>
-                    </div>
-                </div>
-            </td>
-            <td><input type="number" value="1"></td>
-            <td>$1,150.00</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="Images/pic1.jpg" width="30%">
-                        <div>
-                            <p>LG Smart OLED TV</p>
-                            <Small>Price:$3,150.00</Small>
-                            <br>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1"></td>
-                <td>$3,150.00</td>
-                </tr>
+
+       {% endfor %}
+        
+           
     </table>
 
     <div class="total-price">
