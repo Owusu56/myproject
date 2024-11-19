@@ -25,7 +25,11 @@
                     <p>{{ cart.product.name }}</p>
                     <Small>Price:${{ cart.product.price }}</Small>
                     <br>
-                    <a href="">Remove</a>
+                    <form action="/Delete_Cart/{{cart.product.id}}" method="post" style="margin:5px">
+                        {% csrf_token %}
+                     <input type="submit" value="Delete">
+                    </form>
+                    {% comment %} <a action="/Delete_Cart/{{cart.product.id}}">Remove</a> {% endcomment %}
                 </div>
             </div>
         </td>
@@ -37,12 +41,12 @@
         
            
     </table>
-
+    {% if total %}
     <div class="total-price">
         <table>
             <tr>
                 <td>Subtotal</td>
-                <td>$2000.00</td>
+                <td>${{total}}</td>
             </tr>
             <tr>
                 <td>Tax</td>
@@ -50,10 +54,11 @@
             </tr>
             <tr>
                 <td>Total</td>
-                <td>$2230.00</td>
+                <td>${{total}}</td>
             </tr>
         </table>
     </div>
+    {% endif %}
 </div>
 
 {% endblock %}

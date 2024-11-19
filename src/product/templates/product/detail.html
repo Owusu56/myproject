@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+
+
+{% block title %}
+     Product
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+
+
+<div class="small-container single-product">   {% static 'ProductImages/Images/plasma.jpg' %}
+    <div class="row">
+     <div class="col-2">
+         <img src="{% static 'ProductImages/Images/plasma.jpg' %}" width="100%" id="Product-img">
+
+         <div class="small-img-row">
+            <div class="small-img-col">
+             <img src="{% static 'ProductImages/Images/plas4.jpg' %}" width="100%" class="small-img">
+            </div>
+            <div class="small-img-col">
+             <img src="{% static 'ProductImages/Images/plas3.jpg' %}" width="100%" class="small-img">
+            </div>
+            <div class="small-img-col">
+             <img src="{% static 'ProductImages/Images/plas2.jpg' %}" width="100%" class="small-img">
+            </div>
+            <div class="small-img-col">
+             <img src="{% static 'ProductImages/Images/plas1.jpg' %}" width="100%" class="small-img">
+            </div>
+           
+         </div>
+     </div>
+     <div class="col-2">
+         <h2>Plasma Television</h2>
+         <h4>$3,150.00</h4>
+         <a href="/add-cart/{{ phone.id }}" class="cart">Add to Cart</a>
+         <h3>Product Details </h3>
+         <p>Plasma is a flat panel technology that uses small cells filled with electricity charged ionized gases to produce images <br> It consists of tiny cells called pixels that emit ultravoilet light when electrically charged, which then illuminates the phosphors to create the desiered colours. <br> Plasma displays are bright (1,000 lux or higher for the display module), have a wide colour gamut, and can be produced in fairly large sizes up to 3.8 metres (150 inches) diagonally.</p>
+     </div>
+    </div>
+ </div>
+
+ <!-- -------TITLE-------- -->
+ <div class="small-container">
+    <div class="row row-2">
+       <h2>Related Products</h2>
+       <p>View More</p>
+    </div>
+ </div>
+
+
+ <div class="row">
+     <div class="col-4">
+       <img src="{% static 'ProductImages/Images/plas5.jpg' %}">
+     </div>
+
+     <div class="col-4">
+       <img src="{% static 'ProductImages/Images/plas6.jpg' %}">
+     </div>
+
+     <div class="col-4">
+       <img src="{% static 'ProductImages/Images/plas7.jpg' %}">
+     </div>
+     <div class="col-4">
+       <img src="{% static 'ProductImages/Images/plas8.jpg' %}">
+     </div>
+ </div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+asgiref==3.8.1
+Django==5.1.1
+django-auth-remember==0.3
+django-cors-headers==4.5.0
+django-use-email-as-username==1.4.0
+Django-Verify-Email==2.0.3
+mysql-connector-python==9.1.0
+mysqlclient==2.2.5
+pillow==10.4.0
+sqlparse==0.5.1
+tzdata==2024.1
+whitenoise==6.7.0
+
+
+codemy
+dennis ivy
+favorite
+wishlist
+place order(make payments)
+search
+checkout

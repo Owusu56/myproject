@@ -1,22 +1,29 @@
 {% extends "layout.html" %}
 
-
+{% load static %}
 
 {% block title %}
      Product
 {% endblock %}
 
 {% block content %}
-{% load static %}
+
+
+
 
 {% for product in phone %}
-<div class="fight">
+
+{% comment %} <div class="fight">
 <div class="fight-container">
   <div class="smile" data-name="p-1">
     <img src="{{ product.image.url }}" width="100%">
     <h3>{{ product.name }}</h3>
     <div class="price">${{ product.price }}</div>
   </div>
+  <div class="buttons">
+        <a href="#" class="buy">buy now</a>
+        <a href="/add-cart/{{ product.id }}" class="cart">add to cart</a>
+      </div>
 </div>
 </div>
 
@@ -24,6 +31,10 @@
     <div class="preview" data-target="p-1">
       <i class="fas fa-times"></i>
       <img src="{{ product.image.url }}" width="100%">
+      <div class="buttons">
+        <a href="#" class="buy">buy now</a>
+        <a href="/add-cart/{{ product.id }}" class="cart">add to cart</a>
+      </div>
       <h3>{{ product.name }}</h3>
       <div class="stars">
         <i class="fas fa-star"></i>
@@ -41,6 +52,43 @@
       </div>
     </div>
   </div>
+
+</a> {% endcomment %}
+
+<a href="/detail/{{ product.id }}">
+
+<div class="product">
+  <div class="pr-new">
+      <div class="list-item">
+          <div class="item">
+              <a href="/detail/{{ product.id }}"><img src="{{ product.image.url }}" alt=""></a>
+              <div class="des">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <p><a href="/detail/{{ product.id }}">{{ product.name }}</a></p>
+                  <button>4K</button>
+                  <button>55 inch</button>
+                  <p>Price: ${{ product.price }}</p>
+                  <div class="buttons">
+                    <a href="#" class="buy">buy now</a>
+                    <a href="/add-cart/{{ product.id }}" class="cart">add to cart</a>
+                  </div>
+              </div>
+              
+          </div>
+          
+          
+          
+      </div>
+      <div class="v-more">
+          <a href="../interface/sanpham.html"><button>MOre...</button></a>
+      </div>
+  </div>
+
+</a>
   {% endfor %}
   
 

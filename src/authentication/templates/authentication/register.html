@@ -1,4 +1,133 @@
-<h1> Register Page</h1>
+{% extends "layout.html" %}
+
+{% block title %}
+     Register
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+	body{
+		background: white;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		background-size: 400%
+	} 
+	.wrapper{
+		justify-content: center;
+		align-items: center;
+		width: 400px;
+		background: transparent;
+		border-radius: 10px;
+		padding : 50px 30px;
+		background: linear-gradient(45deg, #03a9f4, white);
+		backdrop-filter: blur(30px);
+		box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+	}
+	.wrapper h1{
+		font-family: 'Playwrite NG Modern', sans-serif;
+		font-size: 45px;
+		text-align: center;
+	}
+	.wrapper .input{
+		position: relative;
+		width: 100%;
+		height: 60px;
+		margin: 30px 0;
+		font-size: 16px;
+		
+	}
+	.input input{
+		width: 100%;
+		height: 100%;
+		background: transparent;
+		border: none;
+		outline: none;
+		border: 2px solid #ffffff;
+		border-radius: 45px;
+		padding: 0 60px 0 20px;
+	}
+	.input input:focus{
+		border: 2px solid #f441a5;
+	}
+	.input input:hover{
+		border: 2px solid #f441a5;
+		transition: cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.3s;
+	}
+	.input input::placeholder{
+		color: #cdcdcd;
+	}
+	.input i{
+		position: absolute;
+		color: #ffffff;
+		font-size: 24px;
+		right: 20px;
+		top: 51%;
+		transform: translateY(-50%);
+	}
+	.wrapper .remember{
+		display: flex;
+		margin : 0 0 20px 10px
+	}
+	.wrapper .remember input{
+		margin : 0 8px 0 0;
+		width : 12px;
+		height : 12px;
+	}
+	.wrapper .sub{
+		width : 60%;
+		height : 40px;
+		background : #f4adeb;
+		border-radius : 45px;
+		border : none;
+		outline : none;
+		color : #000000;
+		font-size : 16px;
+		font-weight: bold;
+		cursor : pointer;
+	}
+	.wrapper .btn-lg{
+		display: flex;
+		justify-content: center;
+	}
+	.sub:hover{
+		background: #ffffff;
+		transition: cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.3s;
+	}
+</style>
+
+<br>
+<div style="display: flex; text-align: center; justify-content: center;">
+<div class="wrapper">
+	<h1>Register</h1>
+	<form method="post">
+	<div class="input">
+		<i class='bx bx-user'></i>
+		{% csrf_token %}
+	</div>
+	<div class="input">
+		<i class='bx bx-lock-alt'></i>
+		{{form.as_p}}
+	</div>
+	<br><br><br><br><br><br><br><br><br><br>
+	
+	<div class="btn-lg">
+		<input  type="submit" value="Register" class="sub">
+	</div>
+</form>
+	<p>Already have an account? </p>
+	<a href="{% url 'login'%}" style="font-size: 20px; color: black;">Login</a>
+	<br><br>
+</div>
+
+</div>
+<br>
+{% endblock %} 
+
+
+{% comment %} <h1> Register Page</h1>
 
 <form method="post" style="width:10%" align ="center">
 	{% csrf_token %}
@@ -6,4 +135,4 @@
 	<input type="submit" value="Register">
 </form>
 
-<P>Already have an account? <a href="{% url 'login'%}">Login</a></P>
+<p>Already have an account? <a href="{% url 'login'%}">Login</a></p> {% endcomment %}

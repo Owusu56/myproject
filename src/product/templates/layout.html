@@ -11,6 +11,7 @@
     </title>
     <link rel="stylesheet" href={% static 'css/style.css' %}>
     <script src="{% static 'js/script.js' %}" defer></script>
+    <script src="{% static 'js/app.js' %}" ></script>
 </head>
 <body>
     <nav>
@@ -21,6 +22,7 @@
                 <a href="index.html"><img src="All Products - STORE_files/logo.png" width="125px"></a>
               </div>
               <nav>
+                <i class="fa-solid fa-heart"></i>
                 <ul id="MenuItems">
                   <li><a href="index.html">Home</a></li>
                   <li><a href="products.html">Products</a></li>
@@ -101,7 +103,7 @@
   
   
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="app.js"></script>
+  <script src="{% static 'js/app.js' %}" ></script>
     
 </body>
 </html>

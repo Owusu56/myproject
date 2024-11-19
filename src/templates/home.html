@@ -5,8 +5,24 @@
 {% endblock %}
 
 {% block content %}
+{% load static %}
+
 <div style="display: flex; justify-content: center;">
-    <img src="Images/sit.png" height="70%" width="80%">
+{% if request.user.is_superuser or request.user.is_staff %}
+<a href="{% url 'admin' %}" class="button">AdminPage</a>
+{% endif %}
+
+{% if request.user.is_authenticated %}
+<p>{{request.user}}</p>
+<p>{{key}}</p>
+<a href="{% url 'login' %}" class="button">Logout</a>
+{% else %}
+<a href="{% url 'login' %}" class="button">login</a>
+{% endif %}
+</div>
+
+<div style="display: flex; justify-content: center;">
+    <img src="{% static 'ProductImages/Images/sit.png' %}" height="70%" width="80%">
   </div>
   
               <div style="text-align: center;">
@@ -49,7 +65,7 @@
               
       <div style="display: flex;flex-wrap: wrap;">
           <div class="col-2">
-              <img src="Images/longest.png">
+              <img src="{% static 'ProductImages/Images/longest.png' %}">
           </div>
           <div class="col-2" style="margin-top: 30px; padding-left: 100px;">
               <h1>You can count <br> oN us</h1>
@@ -67,14 +83,14 @@
              <a href="Product-details.html" class="button">Explore Now &#8594;</a>
           </div>
           <div class="col-2">
-              <img src="Images/img13.png">
+              <img src="{% static 'ProductImages/Images/img13.png' %}">
           </div>
       </div>
   
       <div style="display: flex;flex-wrap: wrap;">
         <div class="row"></div>
         <div class="col-2">
-          <img src="Images/lap.png">
+          <img src="{% static 'ProductImages/Images/lap.png' %}">
       </div>
         <div class="col-2" style="margin-top: 100px; padding-left: 100px;">
            <h1>Nail your first <br> impression</h1>
@@ -91,7 +107,7 @@
          <p>Why go slow when you can play smooth-even during super-fast gaming content. Feel the thrill with smooth performance during even the fastest games and action scenes. Keep up with the supersonic speed and catch every thrilling frame without lag or motion blur. Instead, you'll enjoy seamless action and sensational 4K visuals at speeds up to 120Hz.</p>
       </div>
       <div class="col-2">
-          <img src="Images/longer.png">
+          <img src="{% static 'ProductImages/Images/longer.png' %}">
       </div>
   </div>
   
@@ -99,7 +115,7 @@
           <div class="small-container">
               <div class="row">
                   <div class="col-2">
-                      <img src="Images/img14.png" class="offer-img">
+                      <img src="{% static 'ProductImages/Images/img14.png' %}" class="offer-img">
                   </div>
                   <div class="col-2">
                       <h4>Exclusively Available on KayStore</h4>
@@ -113,26 +129,26 @@
           </div>
       </div>
   
-      
+     
   
               <!-----------brands---------->
               <div class="brands">
                   <div class="small-container">
                       <div class="row">
                           <div class="col-5">
-                              <a href="https://www.samsung.com/us/"><img src="Images/samsung.png"></a>
+                              <a href="https://www.samsung.com/us/"><img src="{% static 'ProductImages/Images/samsung.png' %}"></a>
                           </div>
                           <div class="col-5">
-                              <a href="https://www.sony.com/en/"><img src="Images/sony.png"></a>
+                              <a href="https://www.sony.com/en/"><img src="{% static 'ProductImages/Images/sony.png' %}"></a>
                           </div>
                           <div class="col-5">
-                              <a href="https://www.lg.com/us"><img src="Images/lg.png"></a>
+                              <a href="https://www.lg.com/us"><img src="{% static 'ProductImages/Images/lg.png' %}"></a>
                           </div>
                           <div class="col-5">
-                              <a href="https://www.asus.com/"><img src="Images/asus.png"></a>
+                              <a href="https://www.asus.com/"><img src="{% static 'ProductImages/Images/asus.png' %}"></a>
                           </div>
                           <div class="col-5">
-                              <a href="https://www.usa.canon.com/"><img src="Images/canon.png"></a>
+                              <a href="https://www.usa.canon.com/"><img src=" {% static 'ProductImages/Images/canon.png' %}"></a>
                           </div>
                       </div>
                   </div>

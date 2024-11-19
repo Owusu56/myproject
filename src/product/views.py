@@ -63,3 +63,8 @@ from .models import Product
 def product_list(request):
     phones = Product.objects.all()
     return render(request, "product/product_list.html", {'phone': phones})
+
+def product_detail(request, product_id):
+    phones = Product.objects.get(id = product_id)
+    
+    return render(request, "product/detail.html", {'phone': phones})

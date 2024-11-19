@@ -24,14 +24,14 @@ from authentication.views import index
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
-    # path('', views.home),
-    # path('about/', views.about),
-    # path('authentication', include('authentication.urls')),
-    # path('posts/', include('posts.urls')),
+    path('admin/', admin.site.urls),
+    path('', views.home),
+    path('', views.about),
+    path('', include('authentication.urls')),
+    path('posts/', include('posts.urls')),
     path('admin/', RedirectView.as_view(url='/admin'),name="admin"),
     path('', index, name="home"),
-    path('verification/', include('verify_email.urls')),
+    path('', include('verify_email.urls')),
     path("", include("authentication.urls")),
     path("", include("django.contrib.auth.urls")),
     path("", include("product.urls")),

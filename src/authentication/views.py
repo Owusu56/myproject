@@ -5,7 +5,7 @@ from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from custom_user.admin import UserCreationForm
 from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm
+from custom_user.admin import UserCreationForm
 from django.views.generic import FormView
 from django.core.mail import send_mail
 from verify_email import send_verification_email
@@ -59,12 +59,13 @@ class CustomRegisterView(FormView):
     template_name = "authentication/register.html"
     form_class = UserCreationForm
     redirect_authenticated_user = True
-    success_url = reverse_lazy("home") # Automatically redirect to homepage after Registration
+    success_url = reverse_lazy("send-welcome-mail")  # Automatically redirect to homepage after Registration
+    inactive_user = ''
 
     def form_valid(self, form):
-        # user = form.save()  # Automatically Save Registering User
+       # user = form.save()  # Automatically Save Registering User
         global inactive_user
-        inactive_user = send_verification_email(self.request, form) 
+        inactive_user = send_verification_email(self.request, form)
         form.cleaned_data['email']
         if inactive_user is not None:
             login(self.request, inactive_user)  # Automatically log us in
@@ -74,7 +75,7 @@ class CustomRegisterView(FormView):
         if self.request.user.is_authenticated:
             return redirect("home")  # Prevent User Registeration form from showing
         return super(CustomRegisterView, self).get(request, *args, **kwargs)
-    
+
 
 
 
