@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     "verify_email.apps.VerifyEmailConfig",
     "product",
     "cart",
+    "checkouts",
+    # 'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -158,3 +160,11 @@ EMAIL_HOST_USER = 'postmaster@sandbox0cc2a01b294d4767bab4fb81f6a4daf3.mailgun.or
 EMAIL_HOST_PASSWORD = 'be2dbe206eadd0d766333d97b9e24b22-784975b6-34ac3aa3'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
+
+
+
+
+# # Add paypal settings
+# PAYPAL_TEST = True
+
+# PAYPAL_RECIEVER_EMAIL = 'admin@kay.com'

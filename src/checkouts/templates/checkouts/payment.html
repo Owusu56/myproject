@@ -1,0 +1,266 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block title %}
+     Payment
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .resp-tabs-container {
+        padding: 0px;
+        clear: left;
+        padding: 2em 2.5em;
+        background: #fff;
+        border: 1px solid #e7ebee;
+        width: 800px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+      
+      .payment-info a {
+        padding: 8px 10px;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 600;
+        text-transform: uppercase;
+        background: #ff523b;
+      }
+      
+      .payment-info a:hover {
+        background: #ff523b;
+      }
+      
+      .payment-info h4 {
+        font-size: 14px;
+        text-align: center;
+        color: #000;
+      }
+      
+      .payment-info form input[type="submit"]:hover {
+        background: #ff523b;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+      }
+      
+      .payment-info form input[type="submit"] {
+        background: #ff523b;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 10px 0;
+        border: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        font-size: 16px;
+        outline: none;
+        width: 22%;
+        cursor: pointer;
+        font-weight: 600;
+        margin-bottom: 30px;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+      }
+      
+      .payment-info h3 {
+        font-size: 26px;
+        text-align: center;
+        margin-bottom: 15px;
+        color: #ff523b;
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      .tab-for input[type="text"] {
+        width: 96%;
+        padding: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        border: 1px solid #e7ebee;
+        outline: none;
+        color: #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+      }
+      
+      .tab-for h5,
+      .tab-form-left h5,
+      .tab-form-right h5 {
+          color: #435964;
+          font-size: 13px;
+          text-transform: uppercase;
+          margin: 0 0 8px 0;
+          font-weight: 600;
+      }
+      
+      .tab-for input[type="text"]:hover {
+          border: 1px solid #ff523b;
+          transition: 0.5s all;
+          -webkit-transition: 0.5s all;
+          -moz-transition: 0.5s all;
+          -o-transition: 0.5s all;
+          -ms-transition: 0.5s all;
+      }
+      
+      input.pay-logo {
+        width: 88% !important;
+        padding: 8px 45px 8px 8px !important;
+      }
+      
+      .tab-form-left {
+        float: left;
+        width: 48%;
+      }
+      
+      .user-form ul li {
+        list-style-type: none;
+        display: inline-block;
+        width: 23%;
+        margin-right: 9%;
+      }
+      
+      .text_box {
+        display: inline;
+        width: 60px;
+        padding: 3px 5px;
+        outline: none;
+        margin-left: 1%;
+        font-size: 20px;
+        color: #444;
+        width: 100%;
+        color: #606060;
+        font-size: 15px;
+        padding: 8px 0 8px 10px;
+        border: none;
+        outline: none;
+        background: #fff;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+      }
+      
+      input.text_box {
+        background: #fcfcfc;
+        border: 1px solid #ebeced;
+      }
+      
+      .tab-form-right {
+        float: right;
+        width: 48%;
+      }
+      
+      .tab-form-right input[type="password"] {
+        width: 92%;
+        padding: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        border: 1px solid #e7ebee;
+        outline: none;
+        color: #ccc;
+        border-radius: 5px;
+        margin-bottom: 30px;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+      }
+      
+      .tab-form-right input[type="password"]:hover {
+        border: 1px solid #ff523b;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+      }
+      
+      
+      .user-form ul li {
+        list-style-type: none;
+        display: inline-block;
+        width: 23%;
+        margin-right: 9%;
+      }
+      
+      .confirm-btn {
+        background: #ff523b;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 50px 0;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+        width: 22%;
+        cursor: pointer;
+        font-weight: 600;
+        margin-bottom: 30px;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+      }
+      
+      .clear {
+        clear: both;
+      }
+</style>
+
+<div class="resp-tabs-container">
+    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+        <div class="payment-info">
+            <h3 class="pay-title">Credit Card Info</h3>
+            <form>
+                <div class="tab-for">
+                    <h5>Amount</h5>
+                    <input class="pay-logo" type="text" value="GHS" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'GHS';}" required="">
+                </div>
+                <div class="tab-for">
+                    <h5>NAME ON CARD</h5>
+                     <input class="pay-logo" type="text" value="Enter the name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the name';}" required="">
+                    <h5>CARD NUMBER</h5>
+                    <input class="pay-logo" type="text" value="0000-0000-0000-0000" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '0000-0000-0000-0000';}" required="">
+                </div>
+                <div class="transaction">
+                    <div class="tab-form-left user-form">
+                        <h5>EXPIRATION</h5>
+                        <ul>
+                            <li>
+                                <input type="number" class="text_box" type="text" value="0" min="1" />
+                            </li>
+                            <li>
+                                <input type="number" class="text_box" type="text" value="2000" min="1" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-form-right user-form-rt">
+                        <h5>CVV NUMBER</h5>
+                        <input type="password" value="xxx" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'xxx';}" required="">
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <a class="confirm-btn" href="{% url 'Success' %}">SEND</a>
+                
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}

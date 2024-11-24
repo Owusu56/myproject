@@ -13,6 +13,7 @@
         <tr>
             <th>Product</th>
             <th>Quantity</th>
+            <th>Update</th>
             <th>Subtotal</th>
         </tr>
        {% for cart in cart %}
@@ -33,7 +34,7 @@
                 </div>
             </div>
         </td>
-        <td><input type="number" value="1"></td>
+        <td><input type="number"  name="quantity"   value="{{myproduct.quantity}}"    required style="width:15%"></td>
         <td>${{ cart.Total_cost }}</td>
         </tr>
 
@@ -56,9 +57,13 @@
                 <td>Total</td>
                 <td>${{total}}</td>
             </tr>
+            
         </table>
+        
     </div>
     {% endif %}
+    <a href="{% url 'ShowCheckOut' %}"><button class="button">Proceed to Checkout</button></a>
 </div>
+
 
 {% endblock %}

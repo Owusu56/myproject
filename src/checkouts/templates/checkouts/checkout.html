@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block title %}
+     Checkout
+{% endblock %}
+
+{% block content %}
+
+<div class="con">
+  <div class="box1">
+    <h2 class="title">Checkout</h2>
+
+    <form   method="post">
+
+      {% csrf_token %}
+        {{form.as_p}}
+
+        {% comment %} <button class="w-100 btn btn-primary btn-lg" type="submit">Place Order</button> {% endcomment %}
+        <br>
+        <a class="w-100 btn btn-primary btn-lg" href="{% url 'Payment' %}">Place Order</a>
+        </form> 
+    <!-- info  -->
+    {% comment %} <div class="info">
+      <h3>Contact information</h3>
+
+      <p class="label">E-mail</p>
+
+      <div class="input-box">
+        <input
+          type="text"
+          name="email"
+          placeholder="Enter Your Email .. "
+        />
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+
+      <p class="label">Phone</p>
+
+      <div class="input-box">
+        <input
+          type="text"
+          name="phone"
+          placeholder="Enter Your Phone .. "
+        />
+        <i class="fa-solid fa-phone"></i>
+      </div>
+    </div>
+    <!-- end of  info  -->
+
+    <!-- shipping  -->
+    <div class="shipping">
+      <h3>Shipping address</h3>
+
+      <p class="label">Full name</p>
+
+      <div class="input-box">
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter Your Fullname .. "
+        />
+        <i class="fa-solid fa-user"></i>
+      </div>
+
+      <p class="label">Address</p>
+
+      <div class="input-box">
+        <input type="text" name="address" placeholder="Your Address .. " />
+        <i class="fa-solid fa-house"></i>
+      </div>
+
+      <p class="label">City</p>
+
+      <div class="input-box">
+        <input type="text" name="city" placeholder="Your City .. " />
+        <i class="fa-solid fa-city"></i>
+      </div>
+
+      <!-- last  -->
+
+      <div class="last">
+        <div class="separate s1">
+          <p class="label">Country</p>
+          <div class="input-box">
+            <input
+              type="text"
+              name="country"
+              placeholder="Your Country .. "
+            />
+            <i class="fa-solid fa-earth-americas"></i>
+          </div>
+        </div>
+
+        <div class="separate">
+          <p class="label">Postal code</p>
+
+          <div class="input-box">
+            <input
+              type="text"
+              name="code"
+              placeholder="Your Postal Code .. "
+            />
+            <i class="fa-solid fa-envelopes-bulk"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- end of  last  -->
+
+      <input type="checkbox" name="check" id="check" />
+      <label for="check"> Save this information for next time</label>
+    </div> {% endcomment %}
+    <!--end of  shipping  -->
+  </div>
+  <!-- end of box-1 -->
+
+  <!-- box-2 -->
+  {% for cart in cart %}
+  <div class="box2">
+    <div class="card">
+      <div class="item">
+        <img src="{{cart.product.image.url}}" alt="TV" />
+        <div class="count">
+          <p class="item-name">{{cart.product.name}}</p>
+          <h6 class="price">${{cart.product.price}} <span>$124.99</span></h6>
+          <div class="pur">
+            <button id="Debtn1">-</button>
+            <div id="num1"></div>
+            <button id="Inbtn1">+</button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      
+      <div class="end">
+        <hr />
+        <div class="total">
+          <p>Shipping</p>
+          <p>$19</p>
+        </div>
+        <hr />
+
+        <div class="total">
+          <p>Total</p>
+          <p>{{total}}</p>
+        </div>
+      </div>
+    </div>
+    {% comment %} <button class="btn">Continue</button> {% endcomment %}
+  </div>
+  <!-- end of box-2 -->
+</div>
+
+<script src="{% static 'js/script.js' %}" ></script>
+<br><br><br>
+{% endblock %}
