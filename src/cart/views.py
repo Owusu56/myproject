@@ -5,6 +5,8 @@ from .models import Cart
 
 
 
+def wishlist(request):
+     return render(request, 'cart/wishlist.html')
 
 
 def Add_Cart(request, product_id):

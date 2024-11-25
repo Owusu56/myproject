@@ -11,7 +11,7 @@
 {% if request.user.is_superuser or request.user.is_staff %}
 <a href="{% url 'admin' %}" class="button">AdminPage</a>
 {% endif %}
-
+<form method="post">
 {% if request.user.is_authenticated %}
 <p>{{request.user}}</p>
 <p>{{key}}</p>
@@ -19,7 +19,10 @@
 {% else %}
 <a href="{% url 'login' %}" class="button">login</a>
 {% endif %}
+</form>
 </div>
+
+
 
 <div style="display: flex; justify-content: center;">
     <img src="{% static 'ProductImages/Images/sit.png' %}" height="70%" width="80%">
@@ -31,37 +34,7 @@
               </div>
               <br>
   
-        <div style=" display: flex; flex-wrap: wrap; justify-content: space-around;">
   
-  
-                  <div class="key">
-                   <a href="details2.html"><h1 style="padding-left: 45px;">LCD TV</h1></a>
-                  </div>
-                  <div class="key">
-                    <a href="details3.html"><h1 style="padding-left: 50px;">LED TV</h1></a>
-                   </div>
-                   <div class="key">
-                    <a href="details7.html"><h1 style="padding-left: 5px;">MicroLED TV</h1></a>
-                   </div>
-                   <div class="key">
-                    <a href="details6.html"><h1 style="padding-left: 15px;">MiniLED TV</h1></a>
-                   </div>
-                   <div class="key">
-                    <a href="details.html"><h1 style="padding-left: 25px;">Plasma TV</h1></a>
-                   </div>
-                   <div class="key">
-                    <a href="details4.html"><h1>Neo QLED TV</h1></a>
-                   </div>
-                   <div class="key">
-                    <a href="details5.html"><h1 style="padding-left: 35px;">QLED TV</h1></a>
-                   </div>
-                   <div class="key">
-                    <a href="details8.html"><h1 style="padding-left: 25px;">Projectors</h1></a>
-                   </div>
-                
-                
-                    
-                </div>
               
       <div style="display: flex;flex-wrap: wrap;">
           <div class="col-2">
@@ -71,7 +44,7 @@
               <h1>You can count <br> oN us</h1>
                <p style="font-size: 30px; padding-bottom: 5px;">#1 in Overall Quality.</p>
                <p style="font-weight: 400; padding-bottom: 10px;">KayStore TVs have ranked #1 for 3 years in a row</p>
-               <i>Compared to all other measured TV manufacturers in the 2023 American Customer Satisfaction Index surveys of customer rating their own TV manufucturer's performance. The #1 rating is shared with three other TV manufacturers. The American Customer Satisfaction Index is a national measure of customer satisfaction since 1994, trusted by the US government and reflecting annual feedback from more han 250K US customers. ACSI and its logo are registered trademarks of the American Customer Satisfaction Index LLC.</i>
+               <p>Compared to all other measured TV manufacturers in the 2023 American Customer Satisfaction Index surveys of customer rating their own TV manufucturer's performance. The #1 rating is shared with three other TV manufacturers. The American Customer Satisfaction Index is a national measure of customer satisfaction since 1994, trusted by the US government and reflecting annual feedback from more han 250K US customers. ACSI and its logo are registered trademarks of the American Customer Satisfaction Index LLC.</p>
         </div>
       </div>
   
@@ -80,7 +53,7 @@
           <div class="col-2" style="margin-top: 100px; text-align: center;">
              <h1>Give Your Workout <br> A New Style!</h1>
              <p>Success isn't always about greatness. It's about consistency. Consistent <br>hard work gains success. Greatness will come.</p>
-             <a href="Product-details.html" class="button">Explore Now &#8594;</a>
+             <a href="" class="button">Explore Now &#8594;</a>
           </div>
           <div class="col-2">
               <img src="{% static 'ProductImages/Images/img13.png' %}">
@@ -122,7 +95,7 @@
                       <h1>Smart LED TV</h1>
                       <small>The Smart LED features a 39.9% larger AMOLED color full-touch display with adjustable brightness, so everything is clear as can be.</small>
                       <br>
-                      <a href="Product-details.html" class="button">Buy Now &#8594;</a>
+                      <a href="/add-cart/{{ product.id }}" class="button">Buy Now &#8594;</a>
                   </div>
   
               </div>

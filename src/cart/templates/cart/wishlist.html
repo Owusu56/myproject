@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block title %}
+     Cart
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+    .all {
+        /* border: 2px solid; */
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    
+    }
+    
+    .item1 {
+        width: 50%;
+        height: max-content;
+        box-shadow: .1px 3px gray;
+    }
+    
+    .item2 h3 {
+        font-family: 'Permanent Marker', cursive;
+        margin: 1rem;
+    }
+    
+    .item1 img {
+        width: 17rem;
+    
+    }
+    
+    .img-container {
+        width: 95%;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 1rem;
+    }
+    
+    .card-text {
+        width: 15rem;
+    }
+    
+    .wishyour {
+        background-color: rgb(152, 152, 152);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: .5rem;
+    }
+    
+    .card-text h3 {
+        font-size: medium;
+    }
+    
+    .card-text del {
+        font-size: small;
+    }
+    
+        
+</style>
+{% for cart in cart %}
+<div class="all">
+    <div class="item1">
+        <div class="img-container">
+            <img src="{{ cart.product.image.url }}">
+            <div class="card-text">
+                <p>{{ cart.product.name }}</p>
+                <h3>${{ cart.product.price }}<del> ₹79999</del>
+                    <span>15% off<span>
+                            
+                        <form action="/delete_wish/{{cart.product.id}}" method="post" style="margin:5px">
+                            {% csrf_token %}
+                         <input type="submit" value="Delete">
+                        </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}
