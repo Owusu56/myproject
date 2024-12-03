@@ -16,27 +16,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-# from . import views
-# from django.conf import settings
-# from django.conf.urls.static import static
+from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
-# from authentication.views import index
-# from django.views.generic.base import RedirectView
+from authentication.views import index
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-#     path('', views.home),
-#     path('', views.about),
-#     path('', include('authentication.urls')),
-#     path('posts/', include('posts.urls')),
-#     path('admin/', RedirectView.as_view(url='/admin'),name="admin"),
-#     path('', index, name="home"),
-#     path('', include('verify_email.urls')),
-#     path("", include("authentication.urls")),
-#     path("", include("django.contrib.auth.urls")),
-     path("", include("product.urls")),
-#     path("", include("cart.urls")),
-#     path('', include('checkouts.urls')),
- ] 
-# 
-# + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+    path('', views.home),
+    path('', views.about),
+    path('', include('authentication.urls')),
+    path('posts/', include('posts.urls')),
+    path('admin/', RedirectView.as_view(url='/admin'),name="admin"),
+    path('', index, name="home"),
+    path('', include('verify_email.urls')),
+    path("", include("authentication.urls")),
+    path("", include("django.contrib.auth.urls")),
+    path("", include("product.urls")),
+    path("", include("cart.urls")),
+    path('', include('checkouts.urls')),
+ ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+

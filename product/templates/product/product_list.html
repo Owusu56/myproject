@@ -138,20 +138,7 @@
 
 </a>
  
-<div style="display: flex; justify-content: center;">
-    {% if request.user.is_superuser or request.user.is_staff %}
-    <a href="{% url 'admin' %}" class="button">AdminPage</a>
-    {% endif %}
-    <form method="post">
-    {% if request.user.is_authenticated %}
-    <p>{{request.user}}</p>
-    <p>{{key}}</p>
-    <a href="{% url 'login' %}" class="button">Logout</a>
-    {% else %}
-    <a href="{% url 'login' %}" class="button">login</a>
-    {% endif %}
-    </form>
-    </div>
+
   
 
 

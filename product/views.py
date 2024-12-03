@@ -68,3 +68,6 @@ def product_detail(request, product_id):
     phones = Product.objects.get(id = product_id)
     
     return render(request, "product/detail.html", {'phone': phones})
+
+def home(request):
+    return render(request, 'home.html')
