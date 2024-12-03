@@ -121,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# AUTH_USER_MODEL = 'custom_user.User'
+AUTH_USER_MODEL = 'custom_user.User'
 
 
 # Internationalization
