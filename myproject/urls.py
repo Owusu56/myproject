@@ -34,7 +34,7 @@ urlpatterns = [
 #     path('', include('verify_email.urls')),
 #     path("", include("authentication.urls")),
 #     path("", include("django.contrib.auth.urls")),
-#     path("", include("product.urls")),
+     path("", include("product.urls")),
 #     path("", include("cart.urls")),
 #     path('', include('checkouts.urls')),
  ] 
