@@ -69,5 +69,15 @@ def product_detail(request, product_id):
     
     return render(request, "product/detail.html", {'phone': phones})
 
-def home(request):
-    return render(request, 'home.html')
+def search_venues(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        products = Product.objects.filter(name__contains=searched)
+
+
+        return render(request, "product/search_venues.html",{
+            'searched':searched,
+            'products':products
+        })
+    else:
+        return render(request, 'product/search_venues.html', {})

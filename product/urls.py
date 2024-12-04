@@ -11,5 +11,5 @@ urlpatterns = [
     # path("home/", Home, name="home"),
     path("product_list/", views.product_list, name="product_list"),
     path("detail/<int:product_id>",views.product_detail, name= "detail"),
-    
+    path('search_venues', views.search_venues, name="search-venues"),
 ]

@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authentication',
     'posts',
-    # 'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
+    'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
     'custom_user.apps.CustomUserConfig',
     "verify_email.apps.VerifyEmailConfig",
     "product",
